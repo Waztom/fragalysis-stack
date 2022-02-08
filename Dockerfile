@@ -16,6 +16,9 @@ RUN apt-get update -y && apt-get install -y yarn
 # Install nodejs
 RUN apt-get install -y nodejs
 
+# Yarn build fails due cache limit
+RUN export NODE_OPTIONS="--max-old-space-size=8192"
+
 # Add in the frontend code
 # By default this is hosted on the xchem project's master branch
 # but it can be redirected with a couple of build-args.

@@ -7,7 +7,7 @@
 # Fragalysis stack
 Docker setup for building a Django, RDKit and Postgres stack with neo4j 
 
-Folow the stesp below to build and push your own stack image.
+Follow the steps below to build and push your own Docker Hub stack image for Fragalysis. This image is needed for deployment to the development or production clusters via AWX and then Ansible.
 
 ## <a name="clonerepo"></a>Clone the Fragalysis stack repo
 

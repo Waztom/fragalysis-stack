@@ -13,8 +13,8 @@ Follow the steps below to build and push your own Docker Hub stack image for Fra
 
 `git clone https://github.com/Waztom/fragalysis-stack.git`
 
-## <a name="exportnamespaces"></a>Set Docker Hub, GitHub namespaces an branches to use
-
+## <a name="exportnamespaces"></a>Set Docker Hub, GitHub namespaces and branches to use
+- You do not have to add this info here and can export the variables each time but this way might save you time in the future if you're using the same information for each Docker build and push <br>
 - In a linux terminal, add your Docker Hub, GitHub namespaces you want to use for the build along with the Git branches, by editing your bashrc:
 > `sudo nano ~/.bashrc` <br>
 

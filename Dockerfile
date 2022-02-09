@@ -13,7 +13,7 @@ RUN apt-get autoclean -y
 RUN npm install --global yarn
 
 # Yarn build fails due cache limit
-RUN export NODE_OPTIONS="--max-old-space-size=4096 build --optimize-for-size"
+ENV NODE_OPTIONS --max-old-space-size=8192
 
 # Add in the frontend code
 # By default this is hosted on the xchem project's master branch

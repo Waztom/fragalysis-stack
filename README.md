@@ -18,7 +18,7 @@ Follow the steps below to build and push your own Docker Hub stack image for Fra
 - In a linux terminal, add your Docker Hub, GitHub namespaces you want to use for the build along with the Git branches, by editing your bashrc:
 > `sudo nano ~/.bashrc` <br>
 
-- In tyour favourite editor (Nano in this case), at the follwoing to the bottom of your bashrc profile along with your namespace/branch edits: 
+-  add the follwoing to the bottom of your bashrc profile along with your namespace/branch edits: 
 
 ```
 # Fragalysis deployment

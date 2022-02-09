@@ -1,5 +1,5 @@
-ARG BE_NAMESPACE=xchem
-ARG BE_IMAGE_TAG=latest
+ARG BE_NAMESPACE
+ARG BE_IMAGE_TAG
 FROM ${BE_NAMESPACE}/fragalysis-backend:${BE_IMAGE_TAG}
 
 ENV APP_ROOT /code
@@ -13,13 +13,13 @@ RUN apt-get autoclean -y
 RUN npm install --global yarn
 
 # Yarn build fails due cache limit
-RUN export NODE_OPTIONS="--max-old-space-size=8192"
+RUN export NODE_OPTIONS="--max-old-space-size=4096 build --optimize-for-size"
 
 # Add in the frontend code
 # By default this is hosted on the xchem project's master branch
 # but it can be redirected with a couple of build-args.
-ARG FE_NAMESPACE=xchem
-ARG FE_BRANCH=master
+ARG FE_NAMESPACE
+ARG FE_BRANCH
 RUN git clone https://github.com/${FE_NAMESPACE}/fragalysis-frontend ${APP_ROOT}/frontend
 RUN cd ${APP_ROOT}/frontend && git checkout ${FE_BRANCH}
 

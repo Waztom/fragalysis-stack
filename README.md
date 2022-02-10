@@ -35,7 +35,7 @@ export STACK_NAMESPACE=<Docker Hub namespace for stack>
 > `cd fragalysis-stack`
 
 - build the Docker image:
-> `docker build --build-arg BE_NAMESPACE=${BE_NAMESPACE} --build-arg BE_IMAGE_TAG=${BE_IMAGE_TAG} --build-arg FE_NAMESPACE=${FE_NAMESPACE} --build-arg FE_BRANCH=${FE_BRANCH} .` <br>
+> `docker build -t ${STACK_NAMESPACE}/fragalysis-stack:latest --build-arg BE_NAMESPACE=${BE_NAMESPACE} --build-arg BE_IMAGE_TAG=${BE_IMAGE_TAG} --build-arg FE_NAMESPACE=${FE_NAMESPACE} --build-arg FE_BRANCH=${FE_BRANCH} .` <br>
 
 - push the Docker image to your Docker Hub account:
 > `docker push ${STACK_NAMESPACE}/fragalysis-stack:latest`

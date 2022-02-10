@@ -67,9 +67,9 @@ on:
       - "main"
     tags:
       - "**"
-  schedule:
-    # Build every Sunday (0) at 4:45pm
-    - cron: "45 16 * * 0"
+  # schedule:
+  #   # Build every Sunday (0) at 4:45pm
+  #   - cron: "45 16 * * 0"
   # Build if triggered externally.
   # The trigger can provide a number of (optional) inputs...
   workflow_dispatch:
@@ -103,7 +103,7 @@ env:
   FE_BRANCH: master
   FE_NAMESPACE: ag-m2ms
   STACK_NAMESPACE: waztom
-  TRIGGER_DEVELOPER_AWX: "yes"
+  # TRIGGER_DEVELOPER_AWX: "yes"
 
   # Common slack notification variables.
   # Used in the rtCamp/action-slack-notify Action.
@@ -257,23 +257,23 @@ jobs:
   #         SLACK_TITLE: Deployment Complete
   #         SLACK_MESSAGE: Deployed to awx/fragalysis-production
 
-  deploy-developer:
-    # A "deploy to a developer's Fragalysis" Kubernetes Namespace
-    # using an environment-defined AWX Job Template name
-    # and the awx/fragalysis-developer environment.
-    needs: build
-    if: |
-      needs.build.outputs.push == 'true' &&
-      needs.build.outputs.deploy-developer == 'true'
-    runs-on: ubuntu-latest
-    environment: awx/fragalysis-developer
-    steps:
-      - name: Deploy developer
-        uses: informaticsmatters/trigger-awx-action@v1
-        with:
-          template: ${{ secrets.AWX_TEMPLATE_NAME }}
-          template-host: ${{ secrets.AWX_HOST }}
-          template-user: ${{ secrets.AWX_USER }}
-          template-user-password: ${{ secrets.AWX_USER_PASSWORD }}
-          template-var: stack_image_tag
-          template-var-value: ${{ needs.build.outputs.tag }}
+  # deploy-developer:
+  #   # A "deploy to a developer's Fragalysis" Kubernetes Namespace
+  #   # using an environment-defined AWX Job Template name
+  #   # and the awx/fragalysis-developer environment.
+  #   needs: build
+  #   if: |
+  #     needs.build.outputs.push == 'true' &&
+  #     needs.build.outputs.deploy-developer == 'true'
+  #   runs-on: ubuntu-latest
+  #   environment: awx/fragalysis-developer
+  #   steps:
+  #     - name: Deploy developer
+  #       uses: informaticsmatters/trigger-awx-action@v1
+  #       with:
+  #         template: ${{ secrets.AWX_TEMPLATE_NAME }}
+  #         template-host: ${{ secrets.AWX_HOST }}
+  #         template-user: ${{ secrets.AWX_USER }}
+  #         template-user-password: ${{ secrets.AWX_USER_PASSWORD }}
+  #         template-var: stack_image_tag
+  #         template-var-value: ${{ needs.build.outputs.tag }}

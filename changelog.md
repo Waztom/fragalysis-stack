@@ -185,3 +185,4 @@ None
 ## 25/02/2022 - CAR prototype 0.0.3
 ## 28/02/2022 - CAR prototpye 0.0.4
 ## 01/03/2022 - CAR prototype 0.0.5
+## 16/03/2022 - CAR prototype 0.0.6

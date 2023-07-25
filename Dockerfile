@@ -3,7 +3,7 @@ ARG BE_IMAGE_TAG=latest
 ARG FE_NAMESPACE=ag-m2ms
 ARG FE_BRANCH=master
 ARG STACK_NAMESPACE=waztom
-ARG STACK_VERSION=0.0.0
+# ARG STACK_VERSION=0.0.0
 FROM ${BE_NAMESPACE}/fragalysis-backend:${BE_IMAGE_TAG}
 
 # Yarn build fails due cache limit
@@ -14,7 +14,7 @@ ENV NODE_OPTIONS --max-old-space-size=8192
 
 # Us
 ARG STACK_NAMESPACE
-ARG STACK_VERSION
+# ARG STACK_VERSION
 # Backend origin (a container)
 ARG BE_NAMESPACE
 ARG BE_IMAGE_TAG

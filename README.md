@@ -1,41 +1,37 @@
-[![build main](https://github.com/xchem/fragalysis-stack/actions/workflows/build-main.yaml/badge.svg)](https://github.com/xchem/fragalysis-stack/actions/workflows/build-main.yaml)
+[![build main](https://github.com/alanbchristie/fragalysis-stack/actions/workflows/build-main.yaml/badge.svg)](https://github.com/alanbchristie/fragalysis-stack/actions/workflows/build-main.yaml)
 
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/xchem/fragalysis-stack)
-[![Version](http://img.shields.io/badge/version-0.0.1-blue.svg?style=flat)](https://github.com/xchem/fragalysis-stack)
+![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/xchem/fragalysis-stack)
 [![License](http://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](https://github.com/xchem/fragalysis-stack/blob/master/LICENSE.txt)
 
 # Fragalysis stack
-Docker setup for building a Django, RDKit and Postgres stack with neo4j 
 
-Follow the steps below to build and push your own Docker Hub stack image for Fragalysis. This image is needed for deployment to the development or production clusters via AWX and then Ansible.
+Docker setup for building a Django, RDKit and Postgres stack with neo4j.
+There is no application code in the repository, it is a repository where the
+stack application is _assembled_ using environment variables that define the
+origin of the [Backend] (container image) and [Frontend] (code).
 
-## <a name="clonerepo"></a>Clone the Fragalysis stack repo
+The "official" stack is built and deployed using GitHub Actions and is deployed
+to production when tagged (with a production-grade tag).
 
-`git clone https://github.com/Waztom/fragalysis-stack.git`
+When an official release is made you MUST make sure the default
+backend and frontend variables are updated so the application is based on
+the correct stable (tagged) backend and frontend code. Specifically: -
 
-## <a name="exportnamespaces"></a>Set Docker Hub, GitHub namespaces and branches to use
-- You do not have to add this info here and can export the variables each time but this way might save you time in the future if you're using the same information for each Docker build and push <br>
-- In a linux terminal, add your Docker Hub, GitHub namespaces you want to use for the build along with the Git branches, by editing your bashrc:
-> `sudo nano ~/.bashrc` <br>
+- `BE_IMAGE_TAG`
+- `FE_BRANCH` (called "branch" but should be a frontend tag)
 
--  add the follwoing to the bottom of your bashrc profile along with your namespace/branch edits: 
+## Local development
 
-```
-# Fragalysis deployment
-export BE_NAMESPACE=<Docker Hub namespace for backend>
-export BE_IMAGE_TAG=<Docker Hub image tag for backend>
-export FE_NAMESPACE=<Frontend GitHuB namespace>
-export FE_BRANCH=<Frontend GitHub branch>
-export STACK_NAMESPACE=<Docker Hub namespace for stack>
-``` 
+A docker-compose file provides a convenient way of launching the stack locally.
+The suitability of the various docker-compose files is the responsibility of
+the developer.
 
-## <a name="dockerstack"></a>Build Docker image and push to Docker Hub 
+Check the compose file, adjust accordingly then: -
 
-- cd into the Fragalysis stack repo:
-> `cd fragalysis-stack`
+    docker-compose up
 
-- build the Docker image:
-> `docker build -t ${STACK_NAMESPACE}/fragalysis-stack:latest --build-arg BE_NAMESPACE=${BE_NAMESPACE} --build-arg BE_IMAGE_TAG=${BE_IMAGE_TAG} --build-arg FE_NAMESPACE=${FE_NAMESPACE} --build-arg FE_BRANCH=${FE_BRANCH} .` <br>
+---
 
-- push the Docker image to your Docker Hub account:
-> `docker push ${STACK_NAMESPACE}/fragalysis-stack:latest`
+[backend]: https://github.com/xchem/fragalysis-stack
+[frontend]: https://github.com/xchem/fragalysis-frontend

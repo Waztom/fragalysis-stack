@@ -1,5 +1,138 @@
 # Changelog (from 22/07/2021)
 
+## 16/12/2022 - version 2022.12.1
+
+Job launcher release
+
+### Frontend ([PR #335](https://github.com/xchem/fragalysis-frontend/pull/320)).
+
+:heavy_plus_sign: Job table shows running jobs, and autoreloads
+:heavy_plus_sign: Improved snapshot loading
+
+### Backend ([PR #349-#361 #365 #367](https://github.com/xchem/fragalysis-backend/pull/347)).
+
+:heavy_plus_sign: Bug fixing: backend timeout, error report
+
+### Resolved tickets.
+
+[#977](https://github.com/m2ms/fragalysis-frontend/issues/917),[#996](https://github.com/m2ms/fragalysis-frontend/issues/996),[#979](https://github.com/m2ms/fragalysis-frontend/issues/979),[#1003](https://github.com/m2ms/fragalysis-frontend/issues/1003),[#1011](https://github.com/m2ms/fragalysis-frontend/issues/1011),[#935](https://github.com/m2ms/fragalysis-frontend/issues/935),[#995](https://github.com/m2ms/fragalysis-frontend/issues/995),
+
+## 29/09/2022 - version 2022.09.0
+
+Job launcher release
+
+### Frontend ([PR #300 #302 #306-#312 #314-#320](https://github.com/xchem/fragalysis-frontend/pull/320)).
+
+:heavy_plus_sign: New functionality: Job Launcher
+:heavy_plus_sign: Improved performance
+:heavy_plus_sign: Bug fixing: Layout, filters, snapshots
+
+### Backend ([PR #330 #331 #334 #336-#347](https://github.com/xchem/fragalysis-backend/pull/347)).
+
+:heavy_plus_sign: New functionality: Job Launcher
+:heavy_plus_sign: Improved container building
+
+### Resolved tickets.
+
+[#917](https://github.com/m2ms/fragalysis-frontend/issues/917), [#862](https://github.com/m2ms/fragalysis-frontend/issues/862), [#936](https://github.com/m2ms/fragalysis-frontend/issues/936), [#859](https://github.com/m2ms/fragalysis-frontend/issues/859), [#959](https://github.com/m2ms/fragalysis-frontend/issues/959), [#960](https://github.com/m2ms/fragalysis-frontend/issues/960), [#870](https://github.com/m2ms/fragalysis-frontend/issues/870), [#949](https://github.com/m2ms/fragalysis-frontend/issues/949), [#932](https://github.com/m2ms/fragalysis-frontend/issues/932), [#867](https://github.com/m2ms/fragalysis-frontend/issues/867), [#933](https://github.com/m2ms/fragalysis-frontend/issues/933), [#934](https://github.com/m2ms/fragalysis-frontend/issues/934), [#906](https://github.com/m2ms/fragalysis-frontend/issues/906), [#878](https://github.com/m2ms/fragalysis-frontend/issues/978), [#911](https://github.com/m2ms/fragalysis-frontend/issues/911), [#991](https://github.com/m2ms/fragalysis-frontend/issues/991), [#703](https://github.com/m2ms/fragalysis-frontend/issues/703), [#875](https://github.com/m2ms/fragalysis-frontend/issues/875), [#868](https://github.com/m2ms/fragalysis-frontend/issues/868), [#942](https://github.com/m2ms/fragalysis-frontend/issues/942), [#887](https://github.com/m2ms/fragalysis-frontend/issues/887), [#966](https://github.com/m2ms/fragalysis-frontend/issues/966), [#889](https://github.com/m2ms/fragalysis-frontend/issues/889), [#939](https://github.com/m2ms/fragalysis-frontend/issues/939), [#926](https://github.com/m2ms/fragalysis-frontend/issues/926), [#796](https://github.com/m2ms/fragalysis-frontend/issues/796), [#869](https://github.com/m2ms/fragalysis-frontend/issues/869), [#885](https://github.com/m2ms/fragalysis-frontend/issues/885), [#883](https://github.com/m2ms/fragalysis-frontend/issues/883), [#904](https://github.com/m2ms/fragalysis-frontend/issues/904), [#958](https://github.com/m2ms/fragalysis-frontend/issues/958), [#946](https://github.com/m2ms/fragalysis-frontend/issues/946), [#973](https://github.com/m2ms/fragalysis-frontend/issues/973), [#957](https://github.com/m2ms/fragalysis-frontend/issues/957), [#947](https://github.com/m2ms/fragalysis-frontend/issues/947), [#969](https://github.com/m2ms/fragalysis-frontend/issues/969), [#864](https://github.com/m2ms/fragalysis-frontend/issues/864), [#873](https://github.com/m2ms/fragalysis-frontend/issues/873), .....
+
+## 20/07/2022 - version 2.7.1.
+
+Quick fix
+
+## 19/07/2022 - version 2.7.0.
+
+### Frontend ([PR #300](https://github.com/xchem/fragalysis-frontend/pull/300)).
+
+:heavy_plus_sign: New functionality: Perspectives (Customize layout)
+
+### Backend (no PR change from last release)
+
+:information_source: No changes included in this version.
+
+### Resolved tickets.
+
+[#861](https://github.com/m2ms/fragalysis-frontend/issues/861)
+
+## 14/07/2022 - version 2.6.12.
+
+### Frontend ([PR #299](https://github.com/xchem/fragalysis-frontend/pull/299)).
+
+:heavy_plus_sign: Bug fixed: RHS F button crashing
+
+### Backend ([PR #325,#327,#328,#329](https://github.com/xchem/fragalysis-backend/pull/329)).
+
+:heavy_plus_sign: Bug fixed: download sdf files
+:heavy_plus_sign: Crystal ids in the sdf files
+
+### Resolved tickets.
+
+[#881](https://github.com/m2ms/fragalysis-frontend/issues/881), [#895](https://github.com/m2ms/fragalysis-frontend/issues/895), [#907](https://github.com/m2ms/fragalysis-frontend/issues/907), [#915](https://github.com/m2ms/fragalysis-frontend/issues/915)
+
+## 18/05/2022 - version 2.6.11.
+
+### Frontend ([PR #292-#298](https://github.com/xchem/fragalysis-frontend/pull/292)).
+
+:heavy_plus_sign: Protein bad atom rendering
+:heavy_plus_sign: Disclosure links relative
+:heavy_plus_sign: Bug fixed: restore button
+
+### Backend ([PR #314,#318,#319,#321](https://github.com/xchem/fragalysis-backend/pull/314)).
+
+:heavy_plus_sign: Bug fixed: Debug flag
+:heavy_plus_sign: New graph network
+:heavy_plus_sign: Job launcher 1
+
+### Resolved tickets.
+
+[#724](https://github.com/m2ms/fragalysis-frontend/issues/724), [#775](https://github.com/m2ms/fragalysis-frontend/issues/775), [#628](https://github.com/m2ms/fragalysis-frontend/issues/628), [#845](https://github.com/m2ms/fragalysis-frontend/issues/845)
+
+## 02/03/2022 - version 2.6.10.
+
+### Frontend ([PR #287-#291](https://github.com/xchem/fragalysis-frontend/pull/287)).
+
+:heavy_plus_sign: Bug fixed: Better 2D rendering
+:heavy_plus_sign: Bug fixed: Tag assigment
+:heavy_plus_sign: Bug fixed: Snapshop selected compounds.
+
+### Backend (no PR change from last release)
+
+:information_source: No changes included in this version.
+
+### Resolved tickets.
+
+[#789](https://github.com/m2ms/fragalysis-frontend/issues/789), [#794](https://github.com/m2ms/fragalysis-frontend/issues/794), [#682](https://github.com/m2ms/fragalysis-frontend/issues/682), [#803](https://github.com/m2ms/fragalysis-frontend/issues/803), [#815](https://github.com/m2ms/fragalysis-frontend/issues/815), [#801](https://github.com/m2ms/fragalysis-frontend/issues/801), [#788](https://github.com/m2ms/fragalysis-frontend/issues/788),[#804](https://github.com/m2ms/fragalysis-frontend/issues/804)
+
+## 11/02/2022 - version 2.6.9.
+
+### Frontend (no PR change from last release)
+
+:information_source: No changes included in this version.
+
+### Backend ([PR #312](https://github.com/xchem/fragalysis-backend/pull/312)).
+
+:heavy_plus_sign: Bug fixed: Better 2D rendering
+
+### Resolved tickets.
+
+[#762](https://github.com/m2ms/fragalysis-frontend/issues/762)
+
+## 10/02/2022 - version 2.6.8.
+
+### Frontend ([PR #286](https://github.com/xchem/fragalysis-frontend/pull/286)).
+
+:heavy_plus_sign: Bug fixed: Better 2D rendering
+:heavy_plus_sign: Bug fixed: More robust LHS tooltip
+:heavy_plus_sign: New feature: Show untagged hits button
+
+### Backend ([PR #304 - #308, #311](https://github.com/xchem/fragalysis-backend/pull/304)).
+
+:heavy_plus_sign: New feature: Self-documented zip
+
+### Resolved tickets.
+
+[#762](https://github.com/m2ms/fragalysis-frontend/issues/762), [#765](https://github.com/m2ms/fragalysis-frontend/issues/765), [#768](https://github.com/m2ms/fragalysis-frontend/issues/768), [#787](https://github.com/m2ms/fragalysis-frontend/issues/787), [#790](https://github.com/m2ms/fragalysis-frontend/issues/790),
+
 ## 04/02/2022 - version 2.6.7.
 
 ### Frontend ([PR #285](https://github.com/xchem/fragalysis-frontend/pull/285)).
@@ -31,7 +164,7 @@
 
 ### Resolved tickets.
 
-[#772](https://github.com/m2ms/fragalysis-frontend/issues/772), [#767](https://github.com/m2ms/fragalysis-frontend/issues/767), [#707](https://github.com/m2ms/fragalysis-frontend/issues/707), [#717](https://github.com/m2ms/fragalysis-frontend/issues/717), [#757](https://github.com/m2ms/fragalysis-frontend/issues/757), [#764](https://github.com/m2ms/fragalysis-frontend/issues/764), [#771](https://github.com/m2ms/fragalysis-frontend/issues/771), [#723](https://github.com/m2ms/fragalysis-frontend/issues/723), [#759](https://github.com/m2ms/fragalysis-frontend/issues/759), [#766](https://github.com/m2ms/fragalysis-frontend/issues/766), [#748](https://github.com/m2ms/fragalysis-frontend/issues/748)), [#739](https://github.com/m2ms/fragalysis-frontend/issues/739), [#748](https://github.com/m2ms/fragalysis-frontend/issues/748), [#754](https://github.com/m2ms/fragalysis-frontend/issues/754), [#745](https://github.com/m2ms/fragalysis-frontend/issues/745)), [#744](https://github.com/m2ms/fragalysis-frontend/issues/744), [#783](https://github.com/m2ms/fragalysis-frontend/issues/783), [#758](https://github.com/m2ms/fragalysis-frontend/issues/758), [#761](https://github.com/m2ms/fragalysis-frontend/issues/761)
+[#772](https://github.com/m2ms/fragalysis-frontend/issues/772), [#767](https://github.com/m2ms/fragalysis-frontend/issues/767), [#707](https://github.com/m2ms/fragalysis-frontend/issues/707), [#717](https://github.com/m2ms/fragalysis-frontend/issues/717), [#757](https://github.com/m2ms/fragalysis-frontend/issues/757), [#764](https://github.com/m2ms/fragalysis-frontend/issues/764), [#771](https://github.com/m2ms/fragalysis-frontend/issues/771), [#723](https://github.com/m2ms/fragalysis-frontend/issues/723), [#759](https://github.com/m2ms/fragalysis-frontend/issues/759), [#766](https://github.com/m2ms/fragalysis-frontend/issues/766), [#748](https://github.com/m2ms/fragalysis-frontend/issues/748)), [#739](https://github.com/m2ms/fragalysis-frontend/issues/739), [#748](https://github.com/m2ms/fragalysis-frontend/issues/748), [#754](https://github.com/m2ms/fragalysis-frontend/issues/754), [#745](https://github.com/m2ms/fragalysis-frontend/issues/745), [#744](https://github.com/m2ms/fragalysis-frontend/issues/744), [#783](https://github.com/m2ms/fragalysis-frontend/issues/783), [#758](https://github.com/m2ms/fragalysis-frontend/issues/758), [#761](https://github.com/m2ms/fragalysis-frontend/issues/761)
 
 ## 06/01/2022 - version 2.6.5.
 

@@ -181,13 +181,25 @@ None
 [#627](https://github.com/m2ms/fragalysis-frontend/issues/627), [#645](https://github.com/m2ms/fragalysis-frontend/issues/645), [#636](https://github.com/m2ms/fragalysis-frontend/issues/636), [#633](https://github.com/m2ms/fragalysis-frontend/issues/633), [#631](https://github.com/m2ms/fragalysis-frontend/issues/631), [#637](https://github.com/m2ms/fragalysis-frontend/issues/637), [#630](https://github.com/m2ms/fragalysis-frontend/issues/630), [#632](https://github.com/m2ms/fragalysis-frontend/issues/632), [#638](https://github.com/m2ms/fragalysis-frontend/issues/638), [#635](https://github.com/m2ms/fragalysis-frontend/issues/635), [#602](https://github.com/m2ms/fragalysis-frontend/issues/602), [#607](https://github.com/m2ms/fragalysis-frontend/issues/607), [#571](https://github.com/m2ms/fragalysis-frontend/issues/571), [#557](https://github.com/m2ms/fragalysis-frontend/issues/557), [#593](https://github.com/m2ms/fragalysis-frontend/issues/593), [#619](https://github.com/m2ms/fragalysis-frontend/issues/619), [#595](https://github.com/m2ms/fragalysis-frontend/issues/595), [#598](https://github.com/m2ms/fragalysis-frontend/issues/598), [#599](https://github.com/m2ms/fragalysis-frontend/issues/599), [#594](https://github.com/m2ms/fragalysis-frontend/issues/594), [#597](https://github.com/m2ms/fragalysis-frontend/issues/597), [#596](https://github.com/m2ms/fragalysis-frontend/issues/596)
 
 ## 22/07/2021 - CAR prototype 0.0.1
+
 ## 17/02/2022 - CAR prototype 0.0.2
+
 ## 25/02/2022 - CAR prototype 0.0.3
+
 ## 28/02/2022 - CAR prototpye 0.0.4
+
 ## 01/03/2022 - CAR prototype 0.0.5
+
 ## 16/03/2022 - CAR prototype 0.0.6
+
 ## 04/04/2022 - CAR prototype 0.0.7
+
 ## 21/04/2022 - CAR prototype 0.0.8
+
 ## 21/04/2022 - CAR prototype 0.0.9
+
 ## 22/04/2022 - CAR prototype 0.0.9
+
 ## 17/05/2023 - CAR prototype 0.1.0
+
+## 25/07/2023 - CAR prototype 0.1.1

@@ -165,18 +165,18 @@ jobs:
           echo set-output name=STACK_NAMESPACE::${STACK_NAMESPACE}
           echo ::set-output name=STACK_NAMESPACE::${STACK_NAMESPACE}
 
-        # Set a version
-        STACK_VERSION="0.0.0"
-        if [[ "${{ github.ref }}" =~ ^refs/tags/ ]]; then STACK_VERSION="${{ env.GITHUB_REF_SLUG }}";
-        else STACK_VERSION="${{ github.ref_name }}.${{ github.run_number }}"; fi
-        echo set-output name=STACK_VERSION::${STACK_VERSION}
-        echo ::set-output name=STACK_VERSION::${STACK_VERSION}
+          # Set a version
+          STACK_VERSION="0.0.0"
+          if [[ "${{ github.ref }}" =~ ^refs/tags/ ]]; then STACK_VERSION="${{ env.GITHUB_REF_SLUG }}";
+          else STACK_VERSION="${{ github.ref_name }}.${{ github.run_number }}"; fi
+          echo set-output name=STACK_VERSION::${STACK_VERSION}
+          echo ::set-output name=STACK_VERSION::${STACK_VERSION}
 
-        # What image tag are we creating? 'latest' (if not tagged) or a GitHub tag?
-        TAG="latest"
-        if [[ "${{ github.ref }}" =~ ^refs/tags/ ]]; then TAG="${{ env.GITHUB_REF_SLUG }}"; fi
-        echo set-output name=tag::${TAG}
-        echo ::set-output name=tag::${TAG}
+          # What image tag are we creating? 'latest' (if not tagged) or a GitHub tag?
+          TAG="latest"
+          if [[ "${{ github.ref }}" =~ ^refs/tags/ ]]; then TAG="${{ env.GITHUB_REF_SLUG }}"; fi
+          echo set-output name=tag::${TAG}
+          echo ::set-output name=tag::${TAG}
 
           # Do we push, i.e. is DOCKERHUB_USERNAME defined?
           echo set-output name=push::${{ env.DOCKERHUB_USERNAME != '' }}

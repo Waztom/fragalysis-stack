@@ -66,7 +66,7 @@ on:
       - "master"
       - "main"
     tags:
-    - '**'
+      - "**"
   # Build if triggered externally.
   # The trigger can provide a number of (optional) inputs...
   workflow_dispatch:
@@ -203,50 +203,50 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-    - name: Display build args
-      run: |
-        echo BE_NAMESPACE=${{ steps.vars.outputs.BE_NAMESPACE }}
-        echo BE_IMAGE_TAG=${{ steps.vars.outputs.BE_IMAGE_TAG }}
-        echo FE_NAMESPACE=${{ steps.vars.outputs.FE_NAMESPACE }}
-        echo FE_BRANCH=${{ steps.vars.outputs.FE_BRANCH }}
-        echo STACK_NAMESPACE=${{ steps.vars.outputs.STACK_NAMESPACE }}
-        echo STACK_VERSION=${{ steps.vars.outputs.STACK_VERSION }}
-        echo tag=${{ steps.vars.outputs.tag }}
-    - name: Build
-      uses: docker/build-push-action@v2
-      with:
-        tags: ${{ steps.vars.outputs.STACK_NAMESPACE }}/fragalysis-stack:${{ steps.vars.outputs.tag }}
-        build-args: |
-          BE_NAMESPACE=${{ steps.vars.outputs.BE_NAMESPACE }}
-          BE_IMAGE_TAG=${{ steps.vars.outputs.BE_IMAGE_TAG }}
-          FE_NAMESPACE=${{ steps.vars.outputs.FE_NAMESPACE }}
-          FE_BRANCH=${{ steps.vars.outputs.FE_BRANCH }}
-          STACK_NAMESPACE=${{ steps.vars.outputs.STACK_NAMESPACE }}
-          STACK_VERSION=${{ steps.vars.outputs.tag }}
-    - name: Test
-      run: >
-        docker-compose -f docker-compose.test.yml up
-        --exit-code-from tests
-        --abort-on-container-exit
-      env:
-        STACK_NAMESPACE: ${{ steps.vars.outputs.STACK_NAMESPACE }}
-        STACK_TAG: ${{ steps.vars.outputs.tag }}
-    - name: Login to DockerHub
-      if: steps.vars.outputs.push == 'true'
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: Push
-      if: steps.vars.outputs.push == 'true'
-      run: docker push ${{ steps.vars.outputs.STACK_NAMESPACE }}/fragalysis-stack:${{ steps.vars.outputs.tag }}
-    - name: Notify build
-      if: steps.vars.outputs.notify == 'true'
-      uses: rtCamp/action-slack-notify@v2
-      env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_NOTIFY_WEBHOOK }}
-        SLACK_TITLE: Build Complete
-        SLACK_MESSAGE: Built image ${{ steps.vars.outputs.STACK_NAMESPACE }}/fragalysis-stack:${{ steps.vars.outputs.tag }}
+      - name: Display build args
+        run: |
+          echo BE_NAMESPACE=${{ steps.vars.outputs.BE_NAMESPACE }}
+          echo BE_IMAGE_TAG=${{ steps.vars.outputs.BE_IMAGE_TAG }}
+          echo FE_NAMESPACE=${{ steps.vars.outputs.FE_NAMESPACE }}
+          echo FE_BRANCH=${{ steps.vars.outputs.FE_BRANCH }}
+          echo STACK_NAMESPACE=${{ steps.vars.outputs.STACK_NAMESPACE }}
+          echo STACK_VERSION=${{ steps.vars.outputs.STACK_VERSION }}
+          echo tag=${{ steps.vars.outputs.tag }}
+      - name: Build
+        uses: docker/build-push-action@v2
+        with:
+          tags: ${{ steps.vars.outputs.STACK_NAMESPACE }}/fragalysis-stack:${{ steps.vars.outputs.tag }}
+          build-args: |
+            BE_NAMESPACE=${{ steps.vars.outputs.BE_NAMESPACE }}
+            BE_IMAGE_TAG=${{ steps.vars.outputs.BE_IMAGE_TAG }}
+            FE_NAMESPACE=${{ steps.vars.outputs.FE_NAMESPACE }}
+            FE_BRANCH=${{ steps.vars.outputs.FE_BRANCH }}
+            STACK_NAMESPACE=${{ steps.vars.outputs.STACK_NAMESPACE }}
+            STACK_VERSION=${{ steps.vars.outputs.tag }}
+      - name: Test
+        run: >
+          docker-compose -f docker-compose.test.yml up
+          --exit-code-from tests
+          --abort-on-container-exit
+        env:
+          STACK_NAMESPACE: ${{ steps.vars.outputs.STACK_NAMESPACE }}
+          STACK_TAG: ${{ steps.vars.outputs.tag }}
+      - name: Login to DockerHub
+        if: steps.vars.outputs.push == 'true'
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Push
+        if: steps.vars.outputs.push == 'true'
+        run: docker push ${{ steps.vars.outputs.STACK_NAMESPACE }}/fragalysis-stack:${{ steps.vars.outputs.tag }}
+      - name: Notify build
+        if: steps.vars.outputs.notify == 'true'
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_NOTIFY_WEBHOOK }}
+          SLACK_TITLE: Build Complete
+          SLACK_MESSAGE: Built image ${{ steps.vars.outputs.STACK_NAMESPACE }}/fragalysis-stack:${{ steps.vars.outputs.tag }}
 
   # deploy-staging:
   #   # A fixed job that "deploys to the Fragalysis Staging" Kubernetes Namespace
@@ -313,19 +313,19 @@ jobs:
   #   # A "deploy to a developer's Fragalysis" Kubernetes Namespace
   #   # using an environment-defined AWX Job Template name
   #   # and the awx/fragalysis-developer environment.
-    # needs: build
-    # if: |
-    #   needs.build.outputs.push == 'true' &&
-    #   needs.build.outputs.deploy-developer == 'true'
-    # runs-on: ubuntu-latest
-    # environment: awx/fragalysis-developer
-    # steps:
-    #   - name: Deploy developer
-    #     uses: informaticsmatters/trigger-awx-action@v1
-    #     with:
-    #       template: ${{ secrets.AWX_TEMPLATE_NAME }}
-    #       template-host: ${{ secrets.AWX_HOST }}
-    #       template-user: ${{ secrets.AWX_USER }}
-    #       template-user-password: ${{ secrets.AWX_USER_PASSWORD }}
-    #       template-var: stack_image_tag
-    #       template-var-value: ${{ needs.build.outputs.tag }}
+  # needs: build
+  # if: |
+  #   needs.build.outputs.push == 'true' &&
+  #   needs.build.outputs.deploy-developer == 'true'
+  # runs-on: ubuntu-latest
+  # environment: awx/fragalysis-developer
+  # steps:
+  #   - name: Deploy developer
+  #     uses: informaticsmatters/trigger-awx-action@v1
+  #     with:
+  #       template: ${{ secrets.AWX_TEMPLATE_NAME }}
+  #       template-host: ${{ secrets.AWX_HOST }}
+  #       template-user: ${{ secrets.AWX_USER }}
+  #       template-user-password: ${{ secrets.AWX_USER_PASSWORD }}
+  #       template-var: stack_image_tag
+  #       template-var-value: ${{ needs.build.outputs.tag }}

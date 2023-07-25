@@ -334,5 +334,3 @@ None
 ## 22/04/2022 - CAR prototype 0.0.9
 
 ## 17/05/2023 - CAR prototype 0.1.0
-
-## 25/07/2023 - CAR prototype 0.1.1
